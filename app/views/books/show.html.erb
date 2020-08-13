@@ -4,6 +4,8 @@
 <p>Description : <%=@book.description %></p><br>
 <p>Price:<%= @book.price%></p><br>
 <p>Sold by <%= current_user.name %></p><br>
+<% if book_author(@book)%>
 <%= link_to 'Delete', book_path, method: :delete, data: { confirm: "Are you sure ?" } %>
 <%= link_to 'Edit',edit_book_path(@book)%>
+<% end %>
 <%= link_to "Back",books_path%>
