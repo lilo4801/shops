@@ -3,4 +3,5 @@ class User < ApplicationRecord
    validates :name,:email,:password,:password_confirmation, presence: true
   validates :password, length: { in: 6..20 }
   validates :name,length: { minimum: 5 }
+  has_many :books
 end

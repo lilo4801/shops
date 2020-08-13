@@ -1,0 +1,9 @@
+<%= image_tag(@book.image_url(:default)) %>
+<p>Name of book: <%=@book.namebook %></p><br>
+<p>Name of author: <%=@book.nameauthor %></p><br>
+<p>Description : <%=@book.description %></p><br>
+<p>Price:<%= @book.price%></p><br>
+<p>Sold by <%= current_user.name %></p><br>
+<%= link_to 'Delete', book_path, method: :delete, data: { confirm: "Are you sure ?" } %>
+<%= link_to 'Edit',edit_book_path(@book)%>
+<%= link_to "Back",books_path%>

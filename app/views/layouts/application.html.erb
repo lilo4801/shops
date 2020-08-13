@@ -18,9 +18,11 @@
          </div>
        <% end %>
      </section>
+  <h1><%= link_to "Store",root_path%></h1><br>
    <% if user_logged_in? %>
-      <%= link_to current_user.email,"#", class:"navbar-item" %>
-      <%= link_to 'Login Out', session_path, method: :delete %>
+      <%= link_to "Sell",new_book_path  %>
+      <%= link_to current_user.email,user_path(@current_user)%>
+
   <% else %>
       <%= link_to "Login",new_session_path%>
       <%= link_to "Register", new_user_path %>
