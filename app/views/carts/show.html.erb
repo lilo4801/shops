@@ -1,0 +1,4 @@
+<h1><%= link_to 'Keep Shopping', books_path %></h1>
+<%= render(@cart.line_items) %>
+<%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " } %>
+<p>Totol of cart: <h1><%= number_to_currency(@cart.total_price) %></h1></p>
