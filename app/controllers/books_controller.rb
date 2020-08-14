@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
       before_action :set_book, only: [:show, :edit, :update, :destroy]
+      http_basic_authenticate_with email: "admin@admin.com", password: "password", name:"Admin123" ,except: [:show, :index]
   def index
     @books=Book.all
   end
