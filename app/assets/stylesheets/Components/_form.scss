@@ -1,0 +1,23 @@
+@import "../Abstracts/variable";
+.form{
+  padding: 6rem;
+  &__group{
+     margin-bottom: 1.5rem;
+  }
+  &__input{
+      padding: .5rem 1rem;
+      border: .1rem solid $color-gray;
+      width: 120%;
+      border-radius: .3rem;
+      overflow: hidden;
+      &:focus{
+          outline: .1rem solid $color-primary-light;
+      }
+  }
+
+  &__label{
+      font-size: 1rem;
+      font-weight: 300;
+      vertical-align: middle;
+  }
+}

@@ -1,0 +1,73 @@
+@import "../Abstracts/variable";
+@import "../Abstracts/mixin";
+.signin{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background-color: rgba($color-black, .6);
+    &__content{
+      @include absCenter;
+      background-color: rgba($color-white,.95);
+      width: 60%;
+      height: 60%;
+    }
+    &__left{
+      display: table-cell;
+      width: 40%;
+      padding: 3rem 5rem;
+
+    }
+    &__right{
+      position: relative;
+      display: table-cell;
+      width: 60%;
+      vertical-align: middle;
+      padding: 0rem 1rem;
+      border: 1rem solid $color-gray;
+    }
+    &__click{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: .2rem solid $color-gray;
+      &-1{
+        &:link,
+        &:visited{
+          float: left;
+          font-size: 1.6rem;
+          width: 15rem;
+          text-align: center;
+          margin-left: 2rem;
+          font-weight: 300;
+          display: block;
+          cursor: pointer;
+          padding: 1.5rem .5rem .7rem;
+          text-decoration: none;
+          }
+          &:hover,
+          &:active{
+            color: rgb(27, 168, 255);
+            border-bottom: 3px solid rgb(27, 168, 255);
+          }
+      }
+    }
+    &__close{
+      position: absolute;
+      top: -2rem;
+      right: -2rem;
+      &-icon{
+          font-size: 2rem;
+          width: 2rem;
+          height: 2rem;
+          background-color: $color-white;
+          border-radius: 50%;
+          text-align: center;
+          color: $color-black;
+      }
+    }
+
+}

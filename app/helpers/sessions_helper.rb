@@ -1,6 +1,6 @@
 module SessionsHelper
-  private
   # GET current_user
+  private
    def current_user
      @current_user ||= User.find_by id: session[:user_id]
    end
@@ -14,4 +14,6 @@ module SessionsHelper
   def log_out
    session.delete :user_id
  end
+ 
+
 end

@@ -1,9 +1,55 @@
-<h1>Sign In</h1>
-<%= form_for :user ,url:sessions_path  do |f|%>
-  <%= f.label :email %><br>
-  <%= f.email_field :email %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password%><br>
-  <%= f.submit "Sign In" %>
-<% end %>
-<%= link_to "Register", new_user_path %>
+<div class="signin">
+  <div class="signin__content">
+      <div class="signin__left">
+
+            <h2 class="heading-frist u-margin-bottom-big">Sign In</h2>
+            <img src="../assets/picture1.png" alt="picture1">
+
+      </div>
+      <div class="signin__right">
+          <%= link_to  root_path,style: "text-decoration:none;",class:"signin__close" do%>
+                <div class="signin__close-icon">
+                    &times;
+                </div>
+          <% end %>
+          <div class="signin__click">
+              <%= link_to "Login", new_session_path ,style: "text-decoration:none;",class:"signin__click-1" %>
+              <%= link_to "Register", new_user_path ,style: "text-decoration:none;",class:"signin__click-1" %>
+          </div>
+          <div class="form">
+            <%= form_for :user ,url:sessions_path  do |f|%>
+            <div class="form__group">
+              <div class="row">
+                <div class="col-1-of-4">
+                    <%= f.label :email ,class:"form__label" %>
+                </div>
+                <div class="col-3-of-4">
+                      <%= f.email_field :email ,class:"form__input" , placeholder: "Enter your email"%>
+                </div>
+              </div>
+            </div>
+            <div class="form__group">
+              <div class="row">
+                <div class="col-1-of-4">
+                        <%= f.label :password ,class:"form__label"%>
+                </div>
+                <div class="col-3-of-4">
+                        <%= f.password_field :password ,class:"form__input" , placeholder: "Enter your password"%>
+                </div>
+              </div>
+            </div>
+            <div class="form__group">
+              <div class="row">
+                <div class="col-1-of-4">&nbsp;</div>
+                <div class="col-3-of-4">
+                        <%= f.submit "Sign In" ,class:"btn btn-account btn-account--sub"%>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>

@@ -1,13 +1,39 @@
-<%= image_tag(@book.image_url(:default)) %>
-<p>Name of book: <%=@book.namebook %></p><br>
-<p>Name of author: <%=@book.nameauthor %></p><br>
-<p>Description : <%=@book.description %></p><br>
-<p>Price:<%= @book.price%></p><br>
-<p>Sold by <%= @book.user.name %></p><br>
-<%= button_to "Add to cart",line_items_path(book_id: @book)%>
-<% if book_author(@book)%>
-<%= link_to 'Delete', book_path, method: :delete, data: { confirm: "Are you sure ?" } %>
-<%= link_to 'Edit',edit_book_path(@book)%>
-<%= link_to "Sell new book",new_book_path  %>
-<% end %>
-<%= link_to "Back",books_path%>
+<section class="book">
+    <div class="book__content">
+        <div class="book__img">
+              <%= image_tag(@book.image_url(:thumb)) %>
+        </div>
+        <div class="book__details">
+            <div class="book__details--name">
+              <div class="u-margin-bottom-small">
+                <img src="../assets/logotiki4.png" alt="logotiki4">
+                <h1><%=@book.namebook %></h1><br>
+              </div>
+                <blockquote >
+                    <p class="heading-description"><%=@book.description %></p>
+                </blockquote>
+                  <span>Author:</span>
+                  <h4 class="heading-name--author u-margin-top-3"><%=@book.nameauthor %></h4>
+            </div>
+            <div class="book__details--price">
+              <div class="book__shiper">
+                  <i class="fas fa-truck"></i>Freeship( >30$)
+              </div>
+              <h3 class="heading-price heading-price--sub"><%= number_to_currency(@book.price)%></h3>
+            </div>
+            <div class="book__details--add">
+                <%= button_to line_items_path(book_id: @book),class:"btn btn-add" do %>
+                <span class="header__cart-icon">
+                  <i class="fas fa-shopping-cart u-margin-right-small"></i>Add to cart
+                </span>
+                <% end %>
+            </div>
+        </div>
+      <!-- <% if book_author(@book)%>
+        <%= link_to 'Delete', book_path, method: :delete, data: { confirm: "Are you sure ?" } %>
+        <%= link_to 'Edit',edit_book_path(@book)%>
+        <%= link_to "Sell new book",new_book_path  %>
+        <% end %>
+        <%= link_to "Back",books_path%>
+    </div> -->
+</section>

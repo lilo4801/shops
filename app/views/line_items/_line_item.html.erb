@@ -1,6 +1,26 @@
-<h1><%= line_item.quantity %></h1>
-<%= image_tag(line_item.book.image_url(:thumb)) %>
-<h1><%= line_item.book.namebook %></h1><br>
-Description:<%= truncate(line_item.book.description, length: 140) %><br>
-<strong><%= number_to_currency(line_item.total_price) %></strong><br>
-<%= link_to 'Remove Item', line_item, method: :delete, data: { confirm: "Are you sure? " } %>
+<div class="card__content">
+          <div class="card__products-img">
+              <%= link_to image_tag(line_item.book.image_url(:thumb)), book_path(line_item.book)%>
+          </div>
+          <div class="card__products-details">
+            <h3 class="heading-name u-margin-bottom-small">
+              <%= link_to line_item.book.namebook ,book_path(line_item.book)%>
+            </h3>
+            <span>- Author:</span>
+            <h4 class="heading-name--author">
+              <%= line_item.book.nameauthor %>
+            </h4>
+              <h5>
+              <%= truncate(line_item.book.description, length: 140) %>
+            </h5>
+            <div class="card__price">
+                  <%= number_to_currency(line_item.total_price) %>
+                  <span><%= line_item.quantity %></span>
+            </div>
+            <div class="card__bottom">
+                  <%= link_to 'Remove Item', line_item, method: :delete, data: { confirm: "Are you sure? " } %>
+            </div>
+          </div>
+        </li>
+    </ul>
+  </div>

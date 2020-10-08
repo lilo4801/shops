@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.new(
-  id: 4,
-  name: "Admin123",
-  email: "admin@admin.com",
-  password: "password",
-  password_confirmation: "password"
+  id: 2,
+  name: "admin123",
+  email: "admin123@gmail.com",
+  password: "123456",
+  password_confirmation: "123456"
 )
 user.save!
 
@@ -43,4 +43,37 @@ Book.create!([{
   price: "70",
   image: Rails.root.join("app/assets/images/3.jpg").open,
   user_id: user.id
-}])
+},
+{
+  namebook:"The Great Gatsby",
+  nameauthor: "F. Scott Fitzgerald",
+  description: "The novel chronicles an era that Fitzgerald himself dubbed the . Following the shock and chaos of World War I, American society enjoyed unprecedented levels of prosperity during the ",
+  price: "70",
+  image: Rails.root.join("app/assets/images/5.jpg").open,
+  user_id: user.id
+},
+{
+  namebook:" One Hundred Years of Solitude",
+  nameauthor: "Gabriel Garcia Marquez",
+  description: "One of the 20th century's enduring works, One Hundred Years of Solitude is a widely beloved and acclaimed novel known throughout the world, and the ultimate achievement in a Nobel Prize–winning car...",
+  price: "20",
+  image: Rails.root.join("app/assets/images/6.jpg").open,
+  user_id: user.id
+},
+{
+  namebook:"Moby Dick",
+  nameauthor: "Herman Melville",
+  description: "First published in 1851, Melville's masterpiece is, in Elizabeth Hardwick's words, The saga of Captain Ahab and his monomaniacal pursuit of the white",
+  price: "100",
+  image: Rails.root.join("app/assets/images/7.jpg").open,
+  user_id: user.id
+},
+{
+  namebook:"War and Peace",
+  nameauthor: "Leo Tolstoy",
+  description: "Epic in scale, War and Peace delineates in graphic detail events leading up to Napoleon's invasion of Russia, and the impact of the Napoleonic era on Tsarist society, as seen through the eyes of fi...",
+  price: "100",
+  image: Rails.root.join("app/assets/images/8.jpg").open,
+  user_id: user.id
+}
+])

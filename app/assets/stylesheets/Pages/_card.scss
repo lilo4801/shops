@@ -1,0 +1,81 @@
+@import "../Abstracts/variable";
+@import "../Abstracts/mixin";
+.card{
+   padding: 5rem 20rem;
+   background-color: $color-gray;
+   &__product{
+      width: 100%;
+      background-color: $color-gray;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+   }
+   &__product &__left{
+      background-color: $color-white;
+      width: 70%;
+
+   }
+    &__product &__right{
+      width: 28%;
+      background-color: $color-gray;
+   }
+   &__box{
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+   }
+   &__box &__del{
+      background-color: $color-white;
+      margin-bottom: 2rem;
+   }
+   &__box &__payment{
+
+     background-color: $color-white;
+   }
+   &__left{
+     padding: 2rem 1rem;
+   }
+   &__content{
+     display: flex;
+     flex-direction: row;
+     margin-bottom: 1.5rem;
+   }
+   &__content &__products-img{
+     width: 25%;
+     img{
+       max-width: 100%;
+       &:hover{
+         opacity: .95;
+       }
+     }
+
+   }
+   &__content &__products-details{
+     width: 75%;
+     padding: 0 2rem;
+     position: relative;
+   }
+   &__price{
+     position: absolute;
+     bottom: 2.5rem;
+     right: 3rem;
+     font-size: 2rem;
+     font-weight: 500;
+     span{
+       margin-left: 2rem;
+       color: $color-primary-dark;
+     }
+   }
+   &__bottom{
+     position: absolute;
+     bottom: 2.5rem;
+     left: 3rem;
+     a{
+       text-decoration: none;
+       color: $color-blue-light;
+       &:hover{
+          border-bottom: .1rem solid $color-blue-light;
+       }
+     }
+   }
+}

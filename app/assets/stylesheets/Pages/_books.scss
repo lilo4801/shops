@@ -1,0 +1,63 @@
+@import "../Abstracts/variable";
+.book{
+  background-color: $color-gray;
+  height: 100vh;
+  padding: 5rem 20rem;
+  &__content{
+    display: flex;
+    flex-direction: row;
+  }
+  &__content &__img{
+    width: 40%;
+    background-color: $color-white;
+    margin-right: .1rem;
+    padding: 3rem;
+    img{
+       width: 90%;
+    }
+  }
+  &__content &__details{
+    width: 58%;
+    background-color: $color-white;
+  }
+    &__details{
+      &--name,&--price{
+        border-bottom: .1rem solid $color-gray;
+      }
+      &--name{
+        padding: 3rem 5rem;
+        img{
+          padding-right: 1rem;
+          width: 10rem;
+          border-right: .1rem solid $color-gray;
+        }
+        h1{
+          font-size: 2rem;
+          font-weight: 300;
+          color: $color-black;
+          display: inline-block;
+        }
+        blockquote{
+            margin-left: 1rem;
+            padding: 1rem;
+            background-color: $color-gray;
+        }
+      }
+      &--price{
+        padding: 2rem;
+      }
+      &--add{
+        margin: 5rem;
+        width: 20rem;
+      }
+  }
+  &__shiper{
+    background-color: $color-gray;
+    padding: 1rem;
+    width: 60%;
+    color: $color-green-dark;
+    i{
+      margin-right: 1rem;
+    }
+  }
+}

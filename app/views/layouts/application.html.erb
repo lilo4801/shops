@@ -1,35 +1,83 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Shopps</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>Shopps</title>
+  <meta charset="utf-8">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">  <!--Add this-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">  <!--Add this-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-     <section class="content" style="min-height: auto;">
-       <% flash.each do |key, value| %>
-         <div class="row">
-           <div class="alert alert-<%= key %>">
-             <%= value %>
-           </div>
-         </div>
-       <% end %>
-     </section>
-  <h1><%= link_to "Store",root_path%></h1><br>
-   <% if user_logged_in? %>
-      
-      <%= link_to current_user.email,user_path(@current_user)%>
-      <%= link_to 'Login Out', session_path(@current_user), method: :delete ,data: { confirm: "Are you sure ?" }%>
+<body>
+  <header class="header">
+      <div class="header__logo-box">
+          <%= link_to root_path do %>
+            <img src="../assets/logotiki3.png" alt="logotiki1" class="header__logo header__logo--1">
+            <img src="../assets/logotiki2.png" alt="logotiki2" class="header__logo header__logo--2">
+          <% end %>
+      </div>
+      <div class="header__form">
+          <input type="text" data-view-id="search" value placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..." class="header__form-search">
+          <button type="button" data-view-id="search" class="btn btn-search">
+              <i class="fas fa-search u-margin-right-small"></i>Search
+          </button>
+      </div>
+      <div class="header__cart">
+        <% if cart_has_items %>
+          <%= link_to cart_path(@cart),style: "text-decoration:none;",class:"btn btn-cart" do %>
+            <span class="header__cart-icon">
+              <i class="fas fa-shopping-cart u-margin-right-small"></i>Cart
+            </span>
+            <span class="btn-cart--number">
+              <%= items_number %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>
+    <div class="header__box-account">
+      <div class="header__left">
+          <i class="header__left-icon fas fa-user"></i>
+      </div>
+      <div class="header__right">
+            <span class="header__right-text">Sign In</span>
+            <br>
+            <small class="header__right-text header__right-text--sub">Account</small>
+      </div>
+      <div class="header__account-dropdown-content">
+        <ul class="header__list">
+          <% if user_logged_in? %>
+                <li><%= link_to current_user.email,user_path(@current_user) ,style: "text-decoration:none;" ,class:"btn btn-account u-margin-bottom-small"%></li>
+                <%= link_to 'Login Out', session_path(@current_user), method: :delete ,data: { confirm: "Are you sure ?" },style: "text-decoration:none;" ,class:"btn btn-account"%>
+            <% else %>
+                <li><%= link_to "Login", new_session_path ,style: "text-decoration:none;" ,class:"btn btn-account u-margin-bottom-small"%></li>
+                <li><%= link_to "Register", new_user_path ,style: "text-decoration:none;" ,class:"btn btn-account"%> </li>
+      <% end %>
+        </ul>
+    </div>
+  </div>
 
-  <% else %>
-      <%= link_to "Login",new_session_path%>
-      <%= link_to "Register", new_user_path %>
-   <% end %>
-      <%= link_to "Cart",cart_path(@cart)%>
-     <%= yield %>
-   </body>
+  </header>
+
+
+
+  <!-- <section class="container" style="min-height: auto;">
+    <% flash.each do |key, value| %>
+    <div class="row">
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    </div>
+    <% end %>
+  </section> -->
+
+
+  <%= yield %>
+
+</body>
 
 </html>

@@ -1,0 +1,49 @@
+@import "../Abstracts/variable";
+.heading-frist{
+   font-size: 2rem;
+   font-weight: 300;
+   opacity: .8;
+   &--sub{
+     font-size: 70%;
+     opacity: .7;
+   }
+   span{
+     font-size: 60%;
+     display: block;
+   }
+}
+.heading-total{
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem;
+}
+.heading-price{
+  color: $color-red;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 2rem 0rem 1rem 2rem;
+  &--sub{
+    text-align: left;
+  }
+}
+.heading-name{
+  font-size: 3rem;
+  font-weight: 300;
+  a{
+    text-decoration: none;
+    color: $color-black
+
+  }
+  a:hover{
+      color: $color-blue-light;
+  }
+  &--author{
+    color: $color-blue-light;
+    display: inline-block;
+    margin-bottom: 1rem;
+    &:hover{
+      border-bottom: .1rem solid $color-blue-light;
+    }
+  }
+}
