@@ -3,4 +3,5 @@ class Book < ApplicationRecord
   mount_uploader :image, ImageUploader
   serialize :image, JSON
   has_many :line_items
+  
 end

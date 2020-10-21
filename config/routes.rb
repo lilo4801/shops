@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :books
+  get '/search',to: "books#search"
   root 'books#index'
 end

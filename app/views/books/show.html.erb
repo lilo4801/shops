@@ -29,11 +29,10 @@
                 <% end %>
             </div>
         </div>
-      <!-- <% if book_author(@book)%>
+      <% if book_author(@book) || check_admin%>
         <%= link_to 'Delete', book_path, method: :delete, data: { confirm: "Are you sure ?" } %>
         <%= link_to 'Edit',edit_book_path(@book)%>
         <%= link_to "Sell new book",new_book_path  %>
         <% end %>
-        <%= link_to "Back",books_path%>
-    </div> -->
+    </div>
 </section>
