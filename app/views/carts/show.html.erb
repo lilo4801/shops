@@ -6,7 +6,7 @@
         <div class="card__right">
           <div class="card__box">
             <div class="card__del">
-                  <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " },class:"btn btn-del" %>
+                  <%= button_to 'Keep Shopping', books_path, method: :get,class:"btn btn-del" %>
             </div>
             <div class="card__payment">
               <div class="row">
@@ -16,6 +16,11 @@
                 <div class="col-2-of-3">
                   <h3 class="heading-price"><%= number_to_currency(@cart.total_price) %></h3>
                 </div>
+              </div>
+            </div>
+
+            <div class="card__del">
+                <%= button_to "Payment", new_pay_path, method: :get,class:"btn btn-del"%>
               </div>
             </div>
           </div>

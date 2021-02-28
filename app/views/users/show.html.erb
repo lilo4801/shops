@@ -1,2 +1,2 @@
-<h1><p>Welcome <%= format_name(@user) %></p></h1>
+<h1><p>Welcome <%= @user.name %></p></h1>
   <%= link_to 'Login Out', session_path, method: :delete ,data: { confirm: "Are you sure ?" }%>

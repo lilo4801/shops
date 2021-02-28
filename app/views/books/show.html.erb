@@ -19,7 +19,7 @@
               <div class="book__shiper">
                   <i class="fas fa-truck"></i>Freeship( >30$)
               </div>
-              <h3 class="heading-price heading-price--sub"><%= number_to_currency(@book.price)%></h3>
+              <h3 class="heading-price heading-price--sub-1"><%= number_to_currency(@book.price)%></h3>
             </div>
             <div class="book__details--add">
                 <%= button_to line_items_path(book_id: @book),class:"btn btn-add" do %>

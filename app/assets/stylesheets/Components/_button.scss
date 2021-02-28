@@ -61,4 +61,14 @@
     width: 100%;
     color: $color-white;
   }
+  &-payment{
+      width: 15rem;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $color-yellow-light;
+      &:hover{
+        background-color: $color-white;
+      }
+  }
+
 }

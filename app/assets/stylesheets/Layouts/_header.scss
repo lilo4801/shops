@@ -38,17 +38,33 @@
       top: 3rem;
       right: 30rem;
       width: 10rem;
+      height: 10rem;
       display: inline-block;
     }
     &__account-dropdown-content{
       display: none;
       position: absolute;
       background-color: $color-white;
+      top: 4rem;
       right: .4rem;
       min-width: 16rem;
       box-shadow: 0rem .8rem 1.6rem 0rem rgba($color-black,.2);
       padding: 1.2rem 1.6rem;
       z-index: 1;
+      &::before{
+                    border-width: 9px;
+                    border-style: solid;
+            border-color: transparent transparent rgb(255, 255, 255);
+            border-image: initial;
+            margin-left: -9px;
+            bottom: 100%;
+            left: 50%;
+            content: " ";
+            height: 0px;
+            width: 0px;
+            position: absolute;
+            pointer-events: none;
+      }
 
     }
     &__box-account:hover .header__account-dropdown-content{
