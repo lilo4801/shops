@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'carrierwave', '~> 2.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'stripe'
+gem 'jquery-rails'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

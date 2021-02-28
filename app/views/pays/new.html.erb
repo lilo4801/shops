@@ -1,0 +1,8 @@
+
+  <%= form_for @pay ,url: pays_path do |f| %>
+  <%= f.radio_button(:payment, "online") %>
+  <%= f.label(:online, "use card") %>
+  <%= f.radio_button(:payment, "offline") %>
+  <%= f.label(:offline, "Ship code") %>
+  <%= f.submit %>
+  <% end %>

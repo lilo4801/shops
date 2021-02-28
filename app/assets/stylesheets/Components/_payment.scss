@@ -1,0 +1,13 @@
+.payment{
+    &__form-1,&__form-2{
+      display: none;
+    }
+    &-1:checked~.payment__form-1{
+      display: block;
+    }
+    &-2:checked~.payment__form-2{
+      display: block;
+    }
+
+
+}

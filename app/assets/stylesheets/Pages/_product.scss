@@ -20,6 +20,7 @@
      height: 30rem;
      background-color: $color-white;
      padding: 1rem;
+     position: relative;
 
    }
    &__img{
@@ -35,6 +36,6 @@
    }
    &__list:hover{
       box-shadow: .2rem .2rem 10rem rgba($color-blue-light, .2);
-      
+
    }
 }

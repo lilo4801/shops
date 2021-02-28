@@ -5,4 +5,5 @@ module BooksHelper
   def check_admin
     user_logged_in? && current_user.role == "admin"
   end
+  
 end

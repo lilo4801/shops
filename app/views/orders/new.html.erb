@@ -1,0 +1,8 @@
+<div class="payment pd-10">
+    <% if current_pay.payment == "online"%>
+          <%= render 'formonline'%>
+    <% else %>
+            <%= render 'formoffline'%>
+
+    <% end %>
+</div>

@@ -2,7 +2,7 @@
 .heading-frist{
    font-size: 2rem;
    font-weight: 300;
-   opacity: .8;
+   opacity: .6;
    &--sub{
      font-size: 70%;
      opacity: .7;
@@ -23,8 +23,13 @@
   font-weight: 400;
   text-align: center;
   margin: 2rem 0rem 1rem 2rem;
-  &--sub{
+  &--sub-1{
     text-align: left;
+  }
+  &--sub{
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
   }
 }
 .heading-name{

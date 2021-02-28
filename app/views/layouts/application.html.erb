@@ -27,7 +27,6 @@
           <button type="submit" data-view-id="search" class="btn btn-search">
               <i class="fas fa-search u-margin-right-small"></i>Search
           </button>
-
         </form>
 
       <div class="header__cart">
@@ -65,21 +64,21 @@
   </div>
 
   </header>
-
-
-
-  <!-- <section class="container" style="min-height: auto;">
+<section class="notice">
     <% flash.each do |key, value| %>
-    <div class="row">
-      <div class="alert alert-<%= key %>">
+    <div class="notice__box">
+      <div class="notice__heading">
         <%= value %>
       </div>
     </div>
     <% end %>
-  </section> -->
 
+</section>
+<section class="ok">
+    <%= yield %>
+</section>
 
-  <%= yield %>
+  <h1>hello world</h1>
 
 </body>
 

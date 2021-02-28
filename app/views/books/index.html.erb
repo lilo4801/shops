@@ -1,20 +1,20 @@
-<section class="product">
+ <section class="product">
     <div class="product__content">
-          <% @books.each do |book| %>
-          <div class="product__list">
-              <div class="product__details">
-                  <div class="product__img">
-                      <%= link_to image_tag(book.image_url(:thumb)),book_path(book) %>
-                  </div>
-                  <div class="product__bottom">
-                        <img src="../assets/logotiki4.png" alt="logotiki4" class="product__logo">
-                        <h3 class="heading-frist"><%= book.namebook%>
-                          <span><%= book.nameauthor%></span>
-                        </h3>
-                        <h3 class="heading-price--sub"><%= number_to_currency(book.price) %></h3>      
-                  </div>
+      <% @books.each do |book| %>
+      <div class="product__list">
+          <div class="product__details">
+              <div class="product__img">
+                  <%= link_to image_tag(book.image_url(:thumb)),book_path(book) %>
+              </div>
+              <div class="product__bottom">
+                    <img src="../assets/logotiki4.png" alt="logotiki4" class="product__logo">
+                    <h3 class="heading-frist"><%= book.namebook%>
+                      <span><%= book.nameauthor%></span>
+                    </h3>
+                    <h3 class="heading-price--sub"><%= number_to_currency(book.price) %></h3>
               </div>
           </div>
-          <% end %>
+      </div>
+      <% end %>
     </div>
 </section>
